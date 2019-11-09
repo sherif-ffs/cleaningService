@@ -10,20 +10,28 @@ submitButtons.forEach(button => {
             if (listItems[i].classList.contains('checked')) {
                 count+=1;
             } else {
-                listItems[i].classList.add('error')
+                listItems[i].classList.add('error');
                 listItems[i].addEventListener('click', (e) => {
                     e.target.classList.remove('error');
-                    listItems[i].addEventListener('click', (e) => {
-                        ev.target.classList.toggle('checked');
-                    })
                 })                
             }
         }
-        // remove these...
         if (count != targetCount) {
-           
+                errorMessageExists = true;
+                let errorLabel = document.createElement('h3');
+                errorLabel.innerHTML = 'Explain why you did not complete all of the listed tasks';
+                errorLabel.classList.add('errorLabel');
+                let errorTextArea = document.createElement('TEXTAREA');
+                errorTextArea.classList.add('errorTextArea');
+                parent.appendChild(errorLabel);
+                parent.appendChild(errorTextArea);
         } else {
-            alert('great success')
+            alert('great success');
+            errorMessageExists = false;
+            let labels = document.querySelectorAll('.errorLabel');
+            labels.forEach(label => {
+                parent.removeChild(label);
+            })
         }
     })
 })
@@ -41,51 +49,18 @@ function openCity(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
   }
-
-//LIST LOGICS
 var myNodelist = document.getElementsByTagName("LI");
 var i;
-// for (i = 0; i < myNodelist.length; i++) {
-//   var span = document.createElement("SPAN");
-//   var txt = document.createTextNode("\u00D7");
-//   span.className = "close";
-//   span.appendChild(txt);
-//   myNodelist[i].appendChild(span);
-// }
 
-// // Click on a close button to hide the current list item
-// var close = document.getElementsByClassName("close");
-// var i;
-// let itemIsClicked = false;
-// let textArea = document.querySelector('textarea');
-// for (i = 0; i < close.length; i++) {
-//   close[i].onclick = function() {
-//     if (!itemIsClicked) {
-//         var div = this.parentElement;
-//         textArea.style.display = "block";
-//         itemIsClicked = true;
-//         console.log(this.parentElement)
-//     } else {
-//         textArea.style.display = "none";
-//         itemIsClicked = false;
-//     }
-//   }
-// }
-
-// Add a "checked" symbol when clicking on a list item
 var lists = document.querySelectorAll('ul');
-console.log(lists)
 lists.forEach((list) => {
     list.addEventListener('click', function(ev) {
-        console.log('clicked')
       if (ev.target.tagName === 'LI') {
         ev.target.classList.toggle('checked');
       }
     }, false);
 })
 
-
-// Create a new list item when clicking on the "Add" button
 function newElement() {
   var li = document.createElement("li");
   var inputValue = document.getElementById("myInput").value;
