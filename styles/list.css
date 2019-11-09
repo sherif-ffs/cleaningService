@@ -2,17 +2,19 @@
     box-sizing: border-box;
   }
 ul {
-    margin: 0;
+    margin-top: 1.2vh;
     padding: 0;
   }
   
   ul li {
     cursor: pointer;
     position: relative;
-    padding: 12px 8px 12px 40px;
+    padding: 20px 8px 20px 40px;
     background: #eee;
     font-size: 18px;
+    line-height: 18px;
     transition: 0.2s;
+    font-family: Avenir, Helvetica, sans-serif;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -24,11 +26,11 @@ ul {
   }
   
   ul li:hover {
-    background: #ddd;
+    background: rgba(10, 135, 84, .3);
   }
   
   ul li.checked {
-    background: #888;
+    background: rgb(10, 135, 84);
     color: #fff;
     text-decoration: line-through;
   }
@@ -45,7 +47,9 @@ ul {
     height: 15px;
     width: 7px;
   }
-  
+  ul li.checked:hover {
+      opacity: .8;
+  }
   .close {
     position: absolute;
     right: 0;
@@ -100,4 +104,21 @@ ul {
   
   .addBtn:hover {
     background-color: #bbb;
+  }
+  .submit {
+      width: 100%;
+      font-size: 20px;
+      font-weight: 800;
+      color: white;
+      font-family: Avenir, Helvetica, sans-serif;
+      height: 60px;
+      border: none;
+      background: none;
+      margin-top: 10px;
+      background-color: #3F88C5;
+      box-shadow: 0px 5px #16425B;
+  }
+  .submit:hover {
+      cursor: pointer;
+      opacity: .9;
   }
