@@ -10,12 +10,18 @@ submitButtons.forEach(button => {
             if (listItems[i].classList.contains('checked')) {
                 count+=1;
             } else {
-                continue
+                listItems[i].classList.add('error')
+                listItems[i].addEventListener('click', (e) => {
+                    e.target.classList.remove('error');
+                    listItems[i].addEventListener('click', (e) => {
+                        ev.target.classList.toggle('checked');
+                    })
+                })                
             }
         }
         // remove these...
         if (count != targetCount) {
-            alert('why is there not more stuff done?')
+           
         } else {
             alert('great success')
         }
