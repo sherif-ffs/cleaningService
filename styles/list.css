@@ -10,7 +10,7 @@ ul {
     cursor: pointer;
     position: relative;
     padding: 20px 8px 20px 40px;
-    background: #eee;
+    background: #fafafa;
     font-size: 18px;
     line-height: 18px;
     transition: 0.2s;
@@ -19,14 +19,16 @@ ul {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    transition: 0.3s;
   }
   
-  ul li:nth-child(odd) {
+  /* ul li:nth-child(odd) {
     background: #f9f9f9;
-  }
+  } */
   
   ul li:hover {
     background: rgba(10, 135, 84, .3);
+    transition: 0.3s;
   }
   
   ul li.checked {
@@ -99,26 +101,34 @@ ul {
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
+    transition: 0.3s;
     border-radius: 0;
   }
   
   .addBtn:hover {
     background-color: #bbb;
+    transition: 0.3s;
   }
   .submit {
       width: 100%;
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 800;
       color: white;
       font-family: Avenir, Helvetica, sans-serif;
       height: 60px;
+      line-height: 60px;
       border: none;
       background: none;
-      margin-top: 10px;
+      margin-top: 30px;
+      border-radius: 5px;
       background-color: #3F88C5;
       box-shadow: 0px 5px #16425B;
+      padding-bottom: 20px;
+      transition: 0.3s;
+    
   }
   .submit:hover {
       cursor: pointer;
       opacity: .9;
+      transition: 0.3s;
   }
