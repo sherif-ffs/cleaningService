@@ -10,7 +10,8 @@ ul {
     cursor: pointer;
     position: relative;
     padding: 20px 8px 20px 40px;
-    background: #fafafa;
+    /* background: #fafafa; */
+    border: .2px solid rgba(34, 34, 34, .1);
     font-size: 18px;
     line-height: 18px;
     transition: 0.2s;
@@ -131,4 +132,11 @@ ul {
       cursor: pointer;
       opacity: .9;
       transition: 0.3s;
+  }
+
+  .error {
+    border: 1px solid #A3333D;
+    background-color: #A3333D;
+    color: white;
+    font-weight: bold;
   }
