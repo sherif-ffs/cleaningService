@@ -7,31 +7,62 @@ body {
     width: 100vw;
 }
 .container {
-    border: 1px solid red;
-    height: 600px;
     width: 100%;
-    display: flex; 
+    display: flex;
+    flex-direction: column;
+}
+h2 {
+    font-family: Avenir, Helvetica, sans-serif;
+    font-size: 2.5rem;
+    margin-top: 5%;
+    margin-left: 25%;
+}
+p {
+    font-family: Avenir, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    /* margin-top: 5%; */
+    margin-left: 25%; 
+    opacity: .8;
+}
+.tabContainer {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 2%;
+    display: flex;
+    flex-basis: 80%;
     flex-direction: row;
-    flex-basis: 100%;
-}
-.container .left {
-    display: flex;
+  }
+  
+  .tabContainer button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
     flex: 1;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  .tabContainer button:hover {
+    background-color: #ddd;
+  }
+  
+  .tabContainer button.active {
+    background-color: #ccc;
+  }
+  
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    width: 50%;
+    margin-left: 25%;
+    flex-basis: 80%;
+    border: 1px solid #ccc;
+    border-top: none;
     border: 1px solid red;
-
-}
-.container .middle {
-    display: flex;
-    flex: 3;
-    border: 1px solid red;
-}
-.tabsContainer {
-    border: 2px solid blue;
-    width: 80%;
-    margin-left: 10%;
-}
-.container .right {
-    display: flex;
-    flex: 1;
-    border: 1px solid red;
-}
+  }
