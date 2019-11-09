@@ -1,3 +1,27 @@
+const submitButtons = document.querySelectorAll('.submit');
+submitButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        let parent = e.target.parentElement;
+        let list = parent.childNodes[3];
+        let listItems = list.getElementsByTagName('li');
+        let targetCount = listItems.length;
+        let count=0;
+        for (let i=0; i < listItems.length; i++) {
+            if (listItems[i].classList.contains('checked')) {
+                count+=1;
+            } else {
+                continue
+            }
+        }
+        // remove these...
+        if (count != targetCount) {
+            alert('why is there not more stuff done?')
+        } else {
+            alert('great success')
+        }
+    })
+})
+
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");

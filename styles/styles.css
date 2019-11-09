@@ -47,6 +47,9 @@ p {
     border: none;
     outline: none;
     flex: 1;
+    font-family: Avenir, Helvetica, sans-serif;
+    color: #454545;
+    font-weight: bold;
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
@@ -63,6 +66,8 @@ p {
   
   .tabcontent {
     display: none;
+    font-family: Avenir, Helvetica, sans-serif;
+    color: #222;
     padding: 6px 12px;
     width: 50%;
     margin-left: 25%;
