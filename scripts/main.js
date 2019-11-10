@@ -22,6 +22,10 @@ submitButtons.forEach(button => {
         if (count != targetCount ) {
                 errorMessageExists = true;
                 successMessageExists = false;
+                let errorLabels = document.querySelectorAll('.errorLabel');
+                errorLabels.forEach(label => {
+                    label.remove()
+                })
                 let errorLabel = document.createElement('h3');
                 errorLabel.innerHTML = 'Explain why you did not complete all of the listed tasks';
                 errorLabel.classList.add('errorLabel');
@@ -29,20 +33,25 @@ submitButtons.forEach(button => {
                 errorTextArea.classList.add('errorTextArea');
                 parent.appendChild(errorLabel);
                 parent.appendChild(errorTextArea);
-                let labels = document.querySelectorAll('.successLabel');
-                labels.forEach(label => {
+                
+                let successLabel = document.querySelectorAll('.successLabel');
+                successLabel.forEach(label => {
                     label.remove();
                 })
         } 
         if (count === targetCount ) {
             successMessageExists = true;
+            errorMessageExists = false;
+            let successLabels = document.querySelectorAll('.successLabel');
+            successLabels.forEach(label => {
+                  label.remove()
+            })
             let successLabel = document.createElement('h3');
             successLabel.innerHTML = 'Success! Your data has been uploaded';
             successLabel.classList.add('successLabel');
             parent.appendChild(successLabel);
-            errorMessageExists = false;
-            let labels = document.querySelectorAll('.errorLabel');
-            labels.forEach(label => {
+            let errorLabel = document.querySelectorAll('.errorLabel');
+            errorLabel.forEach(label => {
                 label.remove()
             })
         }
