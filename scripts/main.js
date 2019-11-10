@@ -1,4 +1,7 @@
 const submitButtons = document.querySelectorAll('.submit');
+let errorMessageExists = false;
+let successMessageExists = false;
+
 submitButtons.forEach(button => {
     button.addEventListener('click', (e) => {
         let parent = e.target.parentElement;
@@ -16,8 +19,9 @@ submitButtons.forEach(button => {
                 })                
             }
         }
-        if (count != targetCount) {
+        if (count != targetCount ) {
                 errorMessageExists = true;
+                successMessageExists = false;
                 let errorLabel = document.createElement('h3');
                 errorLabel.innerHTML = 'Explain why you did not complete all of the listed tasks';
                 errorLabel.classList.add('errorLabel');
@@ -25,12 +29,21 @@ submitButtons.forEach(button => {
                 errorTextArea.classList.add('errorTextArea');
                 parent.appendChild(errorLabel);
                 parent.appendChild(errorTextArea);
-        } else {
-            alert('great success');
+                let labels = document.querySelectorAll('.successLabel');
+                labels.forEach(label => {
+                    label.remove();
+                })
+        } 
+        if (count === targetCount ) {
+            successMessageExists = true;
+            let successLabel = document.createElement('h3');
+            successLabel.innerHTML = 'Success! Your data has been uploaded';
+            successLabel.classList.add('successLabel');
+            parent.appendChild(successLabel);
             errorMessageExists = false;
             let labels = document.querySelectorAll('.errorLabel');
             labels.forEach(label => {
-                parent.removeChild(label);
+                label.remove()
             })
         }
     })

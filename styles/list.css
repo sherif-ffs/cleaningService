@@ -33,9 +33,9 @@ ul {
   }
   
   ul li.checked {
-    background: rgb(10, 135, 84);
+    background: #0a8754;
     color: #fff;
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
   }
   
   ul li.checked::before {
@@ -143,7 +143,14 @@ ul {
   }
   .errorLabel {
       color: red;
+      font-size: 20px!important;
+      font-weight: 400;
   }
+  .successLabel {
+    color: #0a8754;
+    font-size: 20px!important;
+    font-weight: 400;
+}
   .errorTextArea {
       border: 1px solid red;
   }
